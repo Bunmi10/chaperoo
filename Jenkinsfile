@@ -1,13 +1,11 @@
 pipeline{
-        agent any
+        agent any'
         enviroment{
-            app_version= "v1"
-            rollback = "false"     
-                steps{
-                    sh "sudo docker build -t chaperoo ."
-                
-                }
-            stage{
+            app_version= 'v1'
+            rollback = 'false'
+        }
+             
+                  stage{
                     stage("Build Image"){
                      steps{
                            script{     
