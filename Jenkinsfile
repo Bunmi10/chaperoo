@@ -25,10 +25,22 @@ pipeline{
                 steps{
                       scripts{
                               if (env.rollback == 'false'){
-                                  docker.withRegistry('http://registry.hub.docker.com', 'docker-hun    
+                                  docker.withRegistry('http://registry.hub.docker.com', 'docker-hub-credentials'){
+                                          image.push("${env.app_version}")      
                                 
-                    sh "sudo docker run -d --name chaptodo -p 80:80 chaperoo"
-                }
+                         }
+                      }
+                   }
+                }    
             }
-        }    
-}
+                    stage('Deloy App'){
+                            steps{
+                               sh "doker-compose pull && docker-compose up -d"
+                          
+                            }        
+                            
+                       } 
+                    
+                  } 
+                
+            }  
