@@ -25,7 +25,7 @@ pipeline{
                 steps{
                       scripts{
                               if (env.rollback == 'false'){
-                                  docker.withRegistry('http://registry.hub.docker.com', 'docker-hub-credentials'){
+                                 sudo docker.withRegistry('http://registry.hub.docker.com', 'sudo docker-hub-credentials'){
                                           image.push("${env.app_version}")      
                                 
                          }
