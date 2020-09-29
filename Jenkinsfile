@@ -1,11 +1,10 @@
 pipeline{
         agent any
-        enviroment{
+        enviroment {
             app_version= 'v1'
             rollback = 'false'
         }
-             
-                  stage{
+                  stages{
                     stage("Build Image"){
                      steps{
                            script{     
