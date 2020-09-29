@@ -8,7 +8,7 @@ pipeline{
                     stage("Build Image"){
                      steps{
                            script{     
-                             if (env.rollback == "false"){
+                             if (env.rollback == 'false'){
                                   image = docker.build("bunmi20/chaperro-frontend") 
                              }
                            
