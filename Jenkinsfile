@@ -1,5 +1,5 @@
 pipeline{
-        agent any'
+        agent any
         enviroment{
             app_version= 'v1'
             rollback = 'false'
